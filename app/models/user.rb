@@ -10,15 +10,15 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :posts
   has_many :comments, dependent: :destroy
   accepts_nested_attributes_for :comments
-  # has_many :likes, dependent: :destroy
+  has_many :likes, dependent: :destroy
   # has_many :sent_requests, dependent: :destroy
   # has_many :received_requests, dependent: :destroy
   # has_many :friendships, dependent: :destroy
 
-  # def userLikesThis(post)
-  #   like = likes.where(post_id: post.id)
-  #   return like.exists?
-  # end
+  def userLikesThis(post)
+    like = likes.where(post_id: post.id)
+    return like.exists?
+  end
 
   # def get_sent_requests
   #   requests_array = []
