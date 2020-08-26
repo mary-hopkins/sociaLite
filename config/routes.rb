@@ -1,6 +1,21 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  resources :users, only: [:index, :show, :current_user_home] do
+    #resources :sent_requests
+    #resources :received_requests
+    #resources :friendships
+    #resources :posts
+    #resource :profiles, only: [:edit, :create, :update, :delete]
+  end
+  #resources :posts do
+    #resources :comments
+    #resources :likes, only: [:create, :destroy]
+  #end
+  
+  #resource :notification
+  #resource :feed
+  root 'users#index'
+  get 'welcome/index' #For signup/signin
 
-root 'welcome#index'
-
+ 
 end
