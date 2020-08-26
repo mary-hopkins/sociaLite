@@ -6,4 +6,21 @@ class User < ApplicationRecord
          :confirmable
   has_one :profile
   accepts_nested_attributes_for :profile
+  has_many :posts, dependent: :destroy
+  accepts_nested_attributes_for :posts
+  
+  
+  
+  def sort_posts
+    if posts
+      sorted_posts = posts.order('posts.created_at DESC')
+      return sorted_posts
+    end
+  end
+
+
 end
+
+
+
+ 

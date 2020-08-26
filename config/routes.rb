@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     #resources :sent_requests
     #resources :received_requests
     #resources :friendships
-    #resources :posts
+    resources :posts
     resource :profiles, only: [:edit, :create, :update, :delete]
   end
   #resources :posts do

@@ -1,0 +1,16 @@
+<div class="newPost section">
+<% if @user == current_user %>
+    <h2>Make a Post!</h2>
+        <p>
+        <strong><%= @user.profile.name %></strong>, what's on your mind? 
+        </p>
+    <%= form_with(model: [ @user, Post.new ], local: true ) do |f| %>
+        <p>
+            <%= f.text_area :body, cols: 40, rows: 5 %>
+        </p>
+        <p>
+            <%= f.submit %>
+        </p>
+    <% end %>
+<% end %>
+</div>
