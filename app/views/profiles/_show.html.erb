@@ -1,0 +1,10 @@
+<% if @user.profile %>
+  <%= render @user.profile %>
+<% else %>
+  <% if @user == current_user %>
+    <p>Please Make a Profile!</p>
+    <%= render 'profiles/newProfile'%>
+    <% else %>
+      <p>This user has not yet made a profile!  Try again later</p>
+    <% end %>
+<% end %>

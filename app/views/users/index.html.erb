@@ -1,1 +1,12 @@
-<h2>Users index</h2>
+  <div class="usersSearch section margin">
+    <h2>Search by Name</h2>
+    
+  </div>
+  
+  <div class="usersList section">
+    <% @users.each do |user| %>
+        
+            <p><%= user.profile.name %></p>
+    
+    <% end %>
+</div>

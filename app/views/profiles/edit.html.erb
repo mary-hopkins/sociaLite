@@ -1,0 +1,48 @@
+<h1 class="margin">Edit your Profile</h1>
+<%= form_with(model: [@user, @profile], url: user_profiles_path) do |f| %>
+    <% if @profile.errors.any? %>
+        <div id="error">
+            <h2>
+                <%= pluralize(@profile.errors.count, "error") %>
+                 stopped these profile changes from being saved:
+            </h2>
+            <ul>
+                <% @article.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :birthday %><br>
+        <%= f.date_field :birthday %>
+      </p>
+      <p>
+        <%= f.label :location %><br>
+        <%= f.text_field :location %>
+      </p>
+      <p>
+        <%= f.label :work %><br>
+        <%= f.text_field :work %>
+      </p>
+      <p>
+        <%= f.label :education %><br>
+        <%= f.text_field :education %>
+      </p>
+      <p>
+        <%= f.label :relationship %><br>
+        <%= f.text_field :relationship %>
+      </p>
+      <p>
+        <%= f.label :interests %><br>
+        <%= f.text_field :interests %>
+      </p>
+      
+      <%= f.submit%>
+<% end %>
+<%= link_to 'Edit Email or Password', edit_user_registration_path(current_user) %><br>
+<%= link_to 'Back', user_path(current_user)%>

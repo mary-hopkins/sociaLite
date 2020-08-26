@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     #resources :received_requests
     #resources :friendships
     #resources :posts
-    #resource :profiles, only: [:edit, :create, :update, :delete]
+    resource :profiles, only: [:edit, :create, :update, :delete]
   end
   #resources :posts do
     #resources :comments
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   
   #resource :notification
   #resource :feed
-  root 'users#index'
+  root 'welcome#index'
   get 'welcome/index' #For signup/signin
 
  

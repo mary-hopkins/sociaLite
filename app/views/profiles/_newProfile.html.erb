@@ -1,0 +1,33 @@
+<%= form_with(model: [@user, Profile.new]) do |f| %>
+      <%= f.hidden_field :user_id, :value => @user.id %>
+      <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :birthday %><br>
+        <%= f.date_field :birthday %>
+      </p>
+      <p>
+        <%= f.label :location %><br>
+        <%= f.text_field :location %>
+      </p>
+      <p>
+        <%= f.label :work %><br>
+        <%= f.text_field :work %>
+      </p>
+      <p>
+        <%= f.label :education %><br>
+        <%= f.text_field :education %>
+      </p>
+      <p>
+        <%= f.label :relationship %><br>
+        <%= f.text_field :relationship %>
+      </p>
+      <p>
+        <%= f.label :interests %><br>
+        <%= f.text_field :interests %>
+      </p>
+      
+  <%= f.submit%>
+  <% end%>

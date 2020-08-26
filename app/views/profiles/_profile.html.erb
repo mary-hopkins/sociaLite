@@ -1,0 +1,40 @@
+<div class="aside profile">
+    <div class="profilePoint" id="profileName">
+        <strong><%= @user.profile.name %></strong>
+    </div>
+    <% if @user.profile.location != "" %>
+        <div class="profilePoint">
+            <p>Lives in <strong><%= @user.profile.location %></strong></p>
+        </div>
+    <% end %>
+    <% if @user.profile.birthday != "" %>
+        <div class="profilePoint">
+            <p>Born on <strong><%= @user.profile.getBirthday %></strong></p>
+        </div>
+    <% end %>
+    <% if @user.profile.work != "" %>
+        <div class="profilePoint">
+            <p>Works at <strong><%= @user.profile.work %></strong></p>
+        </div>
+    <% end %>
+    <% if @user.profile.education != "" %>
+        <div class="profilePoint">
+            <p>Educated at <strong><%= @user.profile.education %></strong></p>
+        </div>
+    <% end %>
+    <% if @user.profile.relationship != "" %>
+        <div class="profilePoint">
+            <p>Relationship status is <strong><%= @user.profile.relationship %></strong></p>
+        </div>
+    <% end %>
+    <% if @user.profile.interests != "" %>
+        <div class="profilePoint">
+            <p>Interested in <strong><%= @user.profile.interests %></strong></p>
+        </div>
+    <% end %>
+    <% if @user == current_user %>
+        <%= link_to 'Edit Profile', edit_user_profiles_path(@user)%>
+    <% else %>
+        <%= render 'friendships/request' %>
+    <% end %>
+</div>
