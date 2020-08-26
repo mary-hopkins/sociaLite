@@ -1,0 +1,11 @@
+<p class="margin">
+    <h3>Edit your Comment!</h3>
+    <%= form_with(model: [ @post, @comment ]) do |f| %>
+        <p>
+            <%= f.text_field :body %>
+        </p>
+        <p>
+            <%= f.submit %>
+        </p>
+    <% end %>
+</p>

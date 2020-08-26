@@ -1,0 +1,13 @@
+<div class="newComment">
+    <p>
+        <h3>Create a new Comment!</h3>
+        <%= form_with(model: [ post, post.comments.build ], local: true ) do |f| %>
+            <p>
+                <%= f.text_field :body %>
+            </p>
+            <p>
+                <%= f.submit "Submit" %>
+            </p>
+        <% end %>
+    </p>
+</div>

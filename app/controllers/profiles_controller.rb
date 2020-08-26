@@ -24,6 +24,9 @@ class ProfilesController < ApplicationController
     def update
         @user = current_user
         @profile = @user.profile
+        # if @profile.photo && params[:photo]
+        #     @profile.photo.purge
+        # end
         if @profile.update(profile_params)
             redirect_to @user
         else
@@ -35,9 +38,14 @@ class ProfilesController < ApplicationController
     end
 
 private
-    def profile_params
-        params.require(:profile).permit(:birthday, :name, :location, 
-                                        :work, :education, :relationship, 
-                                        :interests, :user_id)
-    end
+def profile_params
+    params.require(:profile).permit(:birthday, :name, :location, 
+                                    :work, :education, :relationship, 
+                                    :interests, :user_id)
+end
+    # def profile_params
+    #     params.require(:profile).permit(:birthday, :name, :location, 
+    #                                     :work, :education, :relationship, 
+    #                                     :interests, :user_id, :photo)
+    # end
 end

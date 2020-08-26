@@ -7,10 +7,10 @@ Rails.application.routes.draw do
     resources :posts
     resource :profiles, only: [:edit, :create, :update, :delete]
   end
-  #resources :posts do
-    #resources :comments
+  resources :posts do
+    resources :comments
     #resources :likes, only: [:create, :destroy]
-  #end
+  end
   
   #resource :notification
   #resource :feed

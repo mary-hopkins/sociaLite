@@ -19,6 +19,10 @@ class PostsController < ApplicationController
     def update
         @user = current_user
         @post = @user.posts.find(params[:id])
+        # if @post.photo && params[:photo]
+        #     puts "will delete photo"
+        #     @post.photo.purge
+        # end
         if @post.update(post_params)
             redirect_to @user
         else
@@ -36,6 +40,7 @@ class PostsController < ApplicationController
 
 private
     def post_params
+        #params.require(:post).permit(:body, :photo)
         params.require(:post).permit(:body)
     end
 end

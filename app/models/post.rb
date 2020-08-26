@@ -2,8 +2,8 @@ class Post < ApplicationRecord
     belongs_to :user
     validates :body, presence: true,
                      length: { minimum: 5 }
-    # has_many :comments, dependent: :destroy
-    # accepts_nested_attributes_for :comments
+    has_many :comments, dependent: :destroy
+    accepts_nested_attributes_for :comments
     # has_one_attached :photo
     # has_many :likes, dependent: :destroy
 
