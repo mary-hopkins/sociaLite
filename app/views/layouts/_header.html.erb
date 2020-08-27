@@ -1,15 +1,15 @@
 <nav class="header">
     <% if user_signed_in? %>
-    <div class='left' id='logo'><%= link_to 'SociaLite', root_path %></div>
+    <div class='left' id='logo'><%= link_to 'Fakebook', root_path %></div>
     <% else %>
-    <div class='left' id='logo'><%= link_to 'SociaLite', root_path %></div>
+    <div class='left' id='logo'><%= link_to 'Fakebook', root_path %></div>
     <% end %>
     <ul class='right' id='links'>
         <% if user_signed_in? %>
             <li><%= link_to 'Profile', user_path(current_user)%></li> 
-            <li><%#= link_to 'Feed', feed_path %></li> 
-            <li><%#= link_to 'Notifications', notification_path %></li> 
-            <li><%#= link_to "Fakebook Search", users_path %></li> 
+            <li><%= link_to 'Feed', feed_path %></li> 
+            <li><%= link_to 'Notifications', notification_path %></li> 
+            <li><%= link_to "Fakebook Search", users_path %></li> 
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
             <li><%= link_to "Sign up", new_user_registration_path %></li> 
@@ -20,3 +20,4 @@
 <% if !user_signed_in? %>
     <div class="margin"></div>
 <% end%>
+

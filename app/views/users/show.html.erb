@@ -1,7 +1,7 @@
 <%= render 'profiles/show' %>
 <% if @user.profile %>
 <div class="rightSide">
-    <%#= render 'friendships/list' %>
+    <%= render 'friendships/list' %>
     <% if @user == current_user%><%= render 'posts/newpost' %><%end%>
     <%= render 'posts/index' %>
 </div>

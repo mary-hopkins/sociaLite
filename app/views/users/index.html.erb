@@ -1,12 +1,26 @@
   <div class="usersSearch section margin">
     <h2>Search by Name</h2>
-    
+    <%= form_tag(users_path, method: :get) do %>
+        <%= text_field_tag(:search, params[:search]) %>
+        <%= submit_tag ("Search") %>
+    <% end %>
   </div>
   
   <div class="usersList section">
     <% @users.each do |user| %>
-        
+        <div class="userThumbnail">
+            <%if user.profile.photo.attached? %>
+                <div class="thumbnail">
+                  <%= link_to( image_tag(user.profile.photo, width: 75, height: 100),
+                              user_path(user)) %>
+                </div>
+            <% else %>
+                <div class="thumbnail">
+                    <%= link_to( image_tag("nobody.jpg", width: 75, height: 100),
+                                user_path(user)) %>
+                </div>
+            <% end %>
             <p><%= user.profile.name %></p>
-    
+        </div>
     <% end %>
 </div>

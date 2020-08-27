@@ -1,0 +1,19 @@
+<div class="friendsList section">
+    <h2><%= @user.profile.name %>'s Friend List</h2>
+    <% @user.friends.each do |friend| %>
+        <div class="friendThumbnail">
+            <%if friend.profile.photo.attached? %>
+                <div class="thumbnail">
+                <%= link_to( image_tag(friend.profile.photo, width: 75, height: 100),
+                                user_path(friend)) %>
+                </div>
+            <% else %>
+                <div class="thumbnail">
+                    <%= link_to( image_tag("nobody.jpg", width: 75, height: 100),
+                                user_path(friend)) %>
+                </div>
+            <% end %>
+            <p><%= friend.profile.name %></p>
+        </div>
+    <% end %>
+</div>

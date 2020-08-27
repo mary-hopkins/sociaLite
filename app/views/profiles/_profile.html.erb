@@ -2,6 +2,15 @@
     <div class="profilePoint" id="profileName">
         <strong><%= @user.profile.name %></strong>
     </div>
+    <% if @user.profile.photo.attached? %>
+        <div class="profilePoint" id="profilePicture">
+            <%= image_tag(@user.profile.photo, width: 200, height: 200) if @user.profile.photo.attached? %>
+        </div>
+    <% else %>
+        <div class="profilePoint" id="profilePicture">
+            <%= image_tag('nobody.jpg', width: 200, height: 200)%>
+        </div>
+    <% end %>
     <% if @user.profile.location != "" %>
         <div class="profilePoint">
             <p>Lives in <strong><%= @user.profile.location %></strong></p>

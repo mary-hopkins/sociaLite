@@ -41,7 +41,10 @@
         <%= f.label :interests %><br>
         <%= f.text_field :interests %>
       </p>
-      
+      <p>
+        <%= f.label :photo %><br>
+        <%= f.file_field :photo %>
+      </p>
       <%= f.submit%>
 <% end %>
 <%= link_to 'Edit Email or Password', edit_user_registration_path(current_user) %><br>

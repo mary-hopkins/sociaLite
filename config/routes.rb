@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :current_user_home] do
     resources :sent_requests
     resources :received_requests
-    #resources :friendships
+    resources :friendships
     resources :posts
     resource :profiles, only: [:edit, :create, :update, :delete]
   end
@@ -12,9 +12,9 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
   
-  #resource :notification
-  #resource :feed
-  root 'welcome#index'
+  resource :notification
+  resource :feed
+  root 'feeds#show'
   get 'welcome/index' #For signup/signin
 
  

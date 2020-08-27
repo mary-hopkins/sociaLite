@@ -7,7 +7,12 @@
                                 data: { confirm: 'Are you sure?' } %>
     </div>
     <% end %>
-    
+    <% if post.author.profile.photo.attached?%>
+        <div class="postAvatar">
+            <%= link_to( image_tag(post.author.profile.photo, :class => "dot"),
+                                    user_path(post.author)) %>
+        </div>
+    <% end %>
     <div class="postAuthor"><%= post.getpostauthor %></div>
     <div class="postTime">Posted <%= post.getposttime %></div>
     <div class="postBody"><%= post.body %></div>

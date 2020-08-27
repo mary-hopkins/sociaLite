@@ -1,0 +1,14 @@
+<% if current_user.friends?(@user) %>
+    <%= button_to "Unfriend", user_friendship_path(@user), method: :delete, 
+                                        data: { confirm: "Are you sure?" }%>
+<% elsif current_user.sent_request?(@user) %>
+    <p>Waiting for a response!</p>
+<% elsif current_user.pending_request?(@user) %>
+    <p>Will be an Accept Button</p>
+    <%= button_to "Accept Friend Request", user_friendships_path(@user),
+                    params: {'friendship[friend_id]' => @user.id,
+                             'friendship[user_id]' => current_user.id }%>
+<% else %>
+    <%= button_to "Request Friendship", user_received_requests_path(@user), 
+                    params: {'received_request[requestor_id]' => current_user.id} %>
+<% end %>
