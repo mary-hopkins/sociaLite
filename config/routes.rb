@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :show, :current_user_home] do
-    #resources :sent_requests
-    #resources :received_requests
+    resources :sent_requests
+    resources :received_requests
     #resources :friendships
     resources :posts
     resource :profiles, only: [:edit, :create, :update, :delete]
