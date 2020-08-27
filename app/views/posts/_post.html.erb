@@ -11,7 +11,11 @@
     <div class="postAuthor"><%= post.getpostauthor %></div>
     <div class="postTime">Posted <%= post.getposttime %></div>
     <div class="postBody"><%= post.body %></div>
-   <div class="commentsSection">
+    <div class="postPicture">
+        <%= image_tag(post.photo, width: 200) if post.photo.attached? %>
+    </div>
+            
+    <div class="commentsSection">
     <% post.comments.each do |comment| %>
         <div class='comment'>
             <%= comment.getCommentAuthor %>:
@@ -28,5 +32,16 @@
     <% end %>
     <%= render partial: 'comments/newcomment', locals: {post: post, user: @user} %>
     </div>
-          
+
+    <div class="likesSection">
+        <p class="likesCount"><%= post.likes.count %> 
+            <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %></p>
+        <% if current_user.userLikesThis(post) %>
+            <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
+            <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+        <% else %>
+            <%= button_to 'Like', post_likes_path(post), method: :post %>
+        <% end %>
+    </div>
+
 </div>

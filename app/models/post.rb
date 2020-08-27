@@ -4,7 +4,7 @@ class Post < ApplicationRecord
                      length: { minimum: 5 }
     has_many :comments, dependent: :destroy
     accepts_nested_attributes_for :comments
-    # has_one_attached :photo
+    has_one_attached :photo
     has_many :likes, dependent: :destroy
 
 
