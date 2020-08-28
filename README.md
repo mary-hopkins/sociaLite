@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+A Ruby on Rails clone of Facebook.  Works locally with rails server and heroku local. Deployed to Heroku.
 
 * Ruby version
+    ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x86_64-linux]
 
-* System dependencies
-
-* Configuration
+* Install Instructions:
+    Clone the repository
+    Install gems with: bundle install
+    Create the database and migrate it
 
 * Database creation
+    PostgreSQL database
+    rails db:create
+    rails db:migrate
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
