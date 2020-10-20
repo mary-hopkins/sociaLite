@@ -19,7 +19,7 @@ A Ruby on Rails clone of Facebook.  Works locally with rails server and heroku l
 
 ## Screenshots
     Example Profile
-    ![Lucy's Profile](/app/assets/images/demo/profile.png?raw=true "Lucy's Profile")
+    ![Lucy's Profile](app/assets/images/demo/profile.png?raw=true "Lucy's Profile")
 
     Example Post
     ![Lucy's Post](/app/assets/images/demo/post.png?raw=true "Lucy's Post")
