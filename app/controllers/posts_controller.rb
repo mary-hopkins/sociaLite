@@ -20,7 +20,6 @@ class PostsController < ApplicationController
         @user = current_user
         @post = @user.posts.find(params[:id])
         if @post.photo && params[:photo]
-            puts "will delete photo"
             @post.photo.purge
         end
         if @post.update(post_params)

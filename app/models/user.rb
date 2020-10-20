@@ -85,18 +85,15 @@ class User < ApplicationRecord
   end
 
   def self.search(searck)
-    puts "made it to search"
     if searck != "" && searck != nil
     search = searck.downcase
     user_ids = []
         Profile.all.each do |profile|
           if profile.name.downcase == search
-            puts "found someone"
             user_ids << profile.user_id
           end
         end
         users = User.find(user_ids)
-        puts "returning users: #{users}"
         return users
     else
       User.all

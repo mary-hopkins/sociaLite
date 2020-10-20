@@ -12,10 +12,8 @@ class ReceivedRequestsController < ApplicationController
             if @sent_request.save
                 redirect_to root_path
             else
-                puts "couldn't send request"
             end
         else
-            puts "cound't receive request"
         end
     end
 

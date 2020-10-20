@@ -17,3 +17,19 @@ A Ruby on Rails clone of Facebook.  Works locally with rails server and heroku l
     rails db:create
     rails db:migrate
 
+## Screenshots
+    Example Profile
+    ![Lucy's Profile](/app/assets/images/demo/profile.png?raw=true "Lucy's Profile")
+
+    Example Post
+    ![Lucy's Post](/app/assets/images/demo/post.png?raw=true "Lucy's Post")
+
+    Example Notifications Page
+    ![Notifications](/app/assets/images/demo/notifications.png?raw=true "Notifications")
+
+    Search for Friends
+    ![Search for friends](/app/assets/images/demo/search.png?raw=true "Search for friends")
+
+    Feed
+    ![Post Feed](/app/assets/images/demo/feed.png?raw=true "Post Feed")
+
