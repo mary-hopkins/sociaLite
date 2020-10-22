@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'feeds#show'
   devise_for :users
   resources :users, only: [:index, :show, :current_user_home] do
     resources :sent_requests
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
   
   resource :notification
   resource :feed
-  root 'feeds#show'
   get 'welcome/index' #For signup/signin
 
  
