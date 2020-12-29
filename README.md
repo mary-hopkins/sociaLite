@@ -4,6 +4,11 @@ A Ruby on Rails clone of Facebook.  Works locally with rails server and heroku l
 
 [See it Live!](https://radiant-lake-35927.herokuapp.com/welcome/index)
 
+```
+    username: lucy@example.com
+    password: foobar
+```
+
 ## Ruby version
 
 ```
